@@ -206,15 +206,14 @@ function askBot() {
                 data: JSON.stringify(chat_input_data),
                 dataType: "json",
                 contentType: 'application/json',
-                    success: function (result) {
-                        
-                        $("#chat_messages").append('<div class="bot__messages">' + result.bot_response + ' </div>')                        
-                        $('.chatbox__messages__cotainer').animate({
-                            scrollTop: $('.chatbox__messages__cotainer')[0].scrollHeight}, 1000);
-                    },
-                    error: function (result) {
-                        alert(result.responseJSON.message)
-                    }
+                success: function (result) {        
+                    $("#chat_messages").append('<div class="bot__messages">' + result.bot_response + ' </div>')                        
+                    $('.chatbox__messages__cotainer').animate({
+                        scrollTop: $('.chatbox__messages__cotainer')[0].scrollHeight}, 1000);
+                },
+                error: function (result) {
+                    alert(result.responseJSON.message)
+                }
             });
 
         }
